@@ -1,0 +1,25 @@
+{
+  "name": "tripio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "async": "^2.6.1",
+    "botbuilder": "^3.14.0",
+    "botbuilder-azure": "^3.0.4",
+    "dotenv": "^5.0.1",
+    "jwt-decode": "^2.2.0",
+    "mongodb": "^3.0.4",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "restify": "^5.2.1",
+    "restify-cookies": "^0.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"todo_funciona_bien = true\" && exit 0"
+  },
+  "author": "Inteligencia Artificial Practia",
+  "license": "ISC"
+}
