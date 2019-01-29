@@ -80,12 +80,15 @@ function iniciarBot() {
 				// Otros mensajes de texto (preguntas y respuestas)
 				} else if ( session.message.type = "text" && typeof session.message.text != "undefined" ) {
 					// Envío el mensaje al servicio de LUIS para detectar la intención
+					console.log(" La pregunta es " + session.message.text)
 					rp({
 						method: "GET",
-						uri: "https://" + process.env.LUIS_UBICACION + ".api.cognitive.microsoft.com/luis/v2.0/apps/" + process.env.LUIS_ID_APLICACION + "?subscription-key=" + process.env.LUIS_LLAVE + "&verbose=true&timezoneOffset=" + process.env.LUIS_DIFERENCIA_HORA + "&q=" + session.message.text
+						uri: "https://" + process.env.LUIS_UBICACION + ".api.cognitive.microsoft.com/luis/v2.0/apps/" + process.env.LUIS_ID_APLICACION + "?subscription-key=" + process.env.LUIS_LLAVE + "&verbose=false&timezoneOffset=" + process.env.LUIS_DIFERENCIA_HORA + "&q=" + session.message.text
 					})
 					.then((respuesta_luis) => {
 						// Parseo y verifico la respuesta
+						console.log(" El JSON respuesta es :")
+						console.log(respuesta_luis)
 						respuesta_luis = respuesta_luis ? JSON.parse(respuesta_luis) : null
 						var intencion = null
 						if ( respuesta_luis && typeof respuesta_luis.topScoringIntent != "undefined" && respuesta_luis.topScoringIntent.intent != "None" ) {

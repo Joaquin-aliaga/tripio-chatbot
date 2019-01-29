@@ -1,0 +1,9 @@
+node_modules
+package-lock.json
+.env
+TripioDEVtest/
+example.json
+manifest_original.json
+read_json.js
+src/
+*.txt

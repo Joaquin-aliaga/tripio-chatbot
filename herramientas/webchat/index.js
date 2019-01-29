@@ -7,7 +7,7 @@
 */
 
 // Herramientas
-const rp = require("request-promise-native")
+const rp = require("request-promise-native") 
 const jwt_decode = require("jwt-decode")
 
 var body_denegado = `<!doctype html>
